@@ -1,0 +1,135 @@
+name: Comment on Pull Requests and Issues ✨
+
+# Trigger the workflow on pull_request_target and issues events
+on:
+  pull_request_target:
+    types: [opened, edited] # Trigger on pull request opened and edited events
+  issues:
+    types: [opened, edited] # Trigger on issue opened and edited events
+
+jobs:
+  greeting:
+    # Run the job on the latest version of Ubuntu
+    runs-on: ubuntu-latest
+
+    # Define permissions for the job
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      # Check out the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Use the GitHub script to send greetings and handle linking
+      - name: Send Greeting and Link Related Items
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { github, context } = require('@actions/github');
+            const { issue, pull_request } = context.payload;
+
+            // Define messages with details and emojis for issues
+            const issueGreeting = `
+            🎉 **Welcome to our project, @${context.payload.sender.login}!** 🎉
+
+            We're excited to have you contribute to our project! 🚀 Here's what you need to know about the issue you opened:
+
+            - **Issue Title:** ${context.payload.issue.title}
+            - **Description:** ${context.payload.issue.body || 'No description provided'}
+            - **Date Opened:** ${new Date(context.payload.issue.created_at).toLocaleDateString()}
+
+            We appreciate your feedback and will look into this issue soon. If you have more details or questions, feel free to add comments here. 🤔
+
+            Cheers,  
+            The Project Team 🛠️
+            `;
+
+            const issueLinkMessage = `
+            🔗 **Related Pull Requests:**
+            `;
+
+            const prGreeting = `
+            🙌 **Thank you for your pull request, @${context.payload.sender.login}!** 🙌
+
+            We value your contribution! Here are the details of your pull request:
+
+            - **Title:** ${context.payload.pull_request.title}
+            - **Description:** ${context.payload.pull_request.body || 'No description provided'}
+            - **Branch:** ${context.payload.pull_request.head.ref}
+            - **Date Opened:** ${new Date(context.payload.pull_request.created_at).toLocaleDateString()}
+
+            Our team will review your pull request shortly. Meanwhile, if you have any questions or need changes, just let us know! ✨
+
+            Thanks again,  
+            The Project Team 🌟
+            `;
+
+            const prLinkMessage = `
+            🔗 **Related Issues:**
+            `;
+
+            // Function to comment on issues
+            async function commentOnIssue(issueNumber, message) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: message
+              });
+            }
+
+            // Function to comment on pull requests
+            async function commentOnPullRequest(prNumber, message) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: message
+              });
+            }
+
+            // Handle issues
+            if (context.payload.issue) {
+              const issueNumber = context.payload.issue.number;
+
+              // Send greeting message
+              await commentOnIssue(issueNumber, issueGreeting);
+
+              // Link to related pull requests
+              const prs = await github.rest.pulls.list({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open'
+              });
+
+              let relatedPRs = prs.data.filter(pr => pr.title.includes(context.payload.issue.title) || pr.body.includes(context.payload.issue.title));
+              
+              if (relatedPRs.length > 0) {
+                let prLinks = relatedPRs.map(pr => `- [Pull Request #${pr.number}](https://github.com/${context.repo.owner}/${context.repo.repo}/pull/${pr.number})`).join('\n');
+                await commentOnIssue(issueNumber, `${issueLinkMessage}\n${prLinks}`);
+              }
+            }
+
+            // Handle pull requests
+            if (context.payload.pull_request) {
+              const prNumber = context.payload.pull_request.number;
+
+              // Send greeting message
+              await commentOnPullRequest(prNumber, prGreeting);
+
+              // Link to related issues
+              const issues = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open'
+              });
+
+              let relatedIssues = issues.data.filter(issue => issue.title.includes(context.payload.pull_request.title) || issue.body.includes(context.payload.pull_request.title));
+              
+              if (relatedIssues.length > 0) {
+                let issueLinks = relatedIssues.map(issue => `- [Issue #${issue.number}](https://github.com/${context.repo.owner}/${context.repo.repo}/issues/${issue.number})`).join('\n');
+                await commentOnPullRequest(prNumber, `${prLinkMessage}\n${issueLinks}`);
+              }
+            }
