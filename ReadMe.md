@@ -4,19 +4,21 @@
 [![Stars](https://img.shields.io/github/stars/Armoghan-Blogs/Blogs?style=social)](https://github.com/Armoghan-Blogs/Blogs)
 [![Forks](https://img.shields.io/github/forks/Armoghan-Blogs/Blogs?style=social)](https://github.com/Armoghan-Blogs/Blogs)
 
+[![Comment on Pull Requests and Issues ✨](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml)
+[![Dependabot Updates](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates)
+[![Dependency Review 🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml)
 [![Hugo Version](https://img.shields.io/static/v1?label=HUGO-version&message=0.131.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.131.0)
 [![Blowfish](https://img.shields.io/badge/Hugo--Themes-@Blowfish-blue)](https://themes.gohugo.io/themes/blowfish/)
 [![GitHub](https://img.shields.io/github/license/Armoghan-Blogs/Blogs)](https://github.com/Armoghan-Blogs/Blogs/blob/main/LICENSE)
 ![code-size](https://img.shields.io/github/languages/code-size/Armoghan-Blogs/Blogs)
 ## Table of Contents 📚
 
-- [About](#about)
-- [Overview](#-overview)
-- [Features](#-features)
-- [Technologies Used](#technologies-used)
-- [Special Thanks](#special-thanks)
-- [License](#license)
-- [Contributing](#contributing)
+- [Table of Contents 📚](#table-of-contents-)
+- [About 🤔](#about-)
+- [Overview 🌟](#overview-)
+- [Features ✨](#features-)
+- [Technologies Used 🛠️](#technologies-used-️)
+- [Special Thanks 🙏](#special-thanks-)
 ## About 🤔
 
 Welcome to Armoghan Blogs, my personal blog website! This repository contains the source code for the blog, which is built using Hugo, a static site 
