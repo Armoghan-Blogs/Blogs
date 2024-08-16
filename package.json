@@ -76,17 +76,34 @@
       "prettier --write"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && npx git-cz --hook || true",
+      "commit-msg": "npx commitlint --edit $1 "
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+      }
+    },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
+    "husky": "9.1.4",
+    "lint-staged": "15.2.9",
+    "commitlint": "19.4.0",
+    "commitizen": "4.3.0",
+    "@commitlint/cli": "19.4.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^9.9.0",
+    "@eslint/js": "^9.9.0",
     "eslint-plugin-css-modules": "^2.12.0",
     "eslint-plugin-html": "^8.1.1",
     "eslint-plugin-json": "^4.0.1",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
-    "husky": "9.1.4",
-    "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-toml": "^2.0.1",
