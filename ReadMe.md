@@ -5,6 +5,7 @@
 [![Forks](https://img.shields.io/github/forks/Armoghan-Blogs/Blogs?style=social)](https://github.com/Armoghan-Blogs/Blogs)
 
 [![Comment on Pull Requests and Issues ✨](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml)
+[![CodeQL Analysis 🛠️🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/codeql.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/codeql.yml)
 [![Dependabot Updates](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates)
 [![Dependency Review 🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml)
 [![Hugo Version](https://img.shields.io/static/v1?label=HUGO-version&message=0.131.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.131.0)
