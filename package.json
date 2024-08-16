@@ -5,7 +5,9 @@
   "private": "true",
   "scripts": {
     "prettier": "prettier --check --ignore-unknown .",
-    "prettier:fix": "prettier --write --ignore-unknown ."
+    "prettier:fix": "prettier --write --ignore-unknown .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "Hugo",
@@ -46,6 +48,14 @@
   },
   "homepage": "https://github.com/Armoghan-Blogs/Blogs#readme",
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-css-modules": "^2.12.0",
+    "eslint-plugin-html": "^8.1.1",
+    "eslint-plugin-json": "^4.0.1",
+    "eslint-plugin-markdown": "^5.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-toml": "^2.0.1",

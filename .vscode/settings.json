@@ -124,7 +124,7 @@
         "**/.prettierrc.js": true,
         "**/commitlint.config.js": true,
         "**/.prettierignore": true,
-        "**/eslint.config.cjs": true,
+        "**/eslint.config.mjs": true,
         "**/LICENSE": true,
         "**/SECURITY.md": true,
         "**/CONTRIBUTING.md": true,

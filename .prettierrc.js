@@ -1,16 +1,18 @@
 module.exports = {
   plugins: [
+    // Plugins to handle additional formats and templates
     "prettier-plugin-go-template",
-    "prettier-plugin-toml",
-    "prettier-plugin-xml",
+    "prettier-plugin-toml", 
+    "prettier-plugin-xml", 
   ],
 
+  // General Formatting Options
   semi: true,
-  singleQuote: false,
+  singleQuote: true,
   quoteProps: "as-needed",
   endOfLine: "auto",
   trailingComma: "es5",
-  tabWidth: 4,
+  tabWidth: 2,
   printWidth: 80,
   arrowParens: "always",
   bracketSpacing: true,
@@ -19,9 +21,10 @@ module.exports = {
   embeddedLanguageFormatting: "auto",
   goTemplateBracketSpacing: true,
 
+  // Overrides for Specific File Types
   overrides: [
     {
-      files: ["*.html"],
+      files: ["**/*.html"],
       options: {
         parser: "go-template",
         bracketSameLine: false,
@@ -30,7 +33,7 @@ module.exports = {
       },
     },
     {
-      files: ["*.markdown", "*.md"],
+      files: ["**/*.markdown", "**/*.md"],
       options: {
         parser: "markdown",
         proseWrap: "always",
@@ -38,28 +41,28 @@ module.exports = {
       },
     },
     {
-      files: ["*.yaml", "*.yml"],
+      files: ["**/*.yaml", "**/*.yml"],
       options: {
         parser: "yaml",
         goTemplateBracketSpacing: true,
       },
     },
     {
-      files: ["*.toml"],
+      files: ["**/*.toml"],
       options: {
         parser: "toml",
         goTemplateBracketSpacing: true,
       },
     },
     {
-      files: ["*.json"],
+      files: ["**/*.json"],
       options: {
         parser: "json",
         goTemplateBracketSpacing: true,
       },
     },
     {
-      files: ["*.js"],
+      files: ["**/*.js"],
       options: {
         parser: "babel",
         singleQuote: true,
@@ -68,14 +71,13 @@ module.exports = {
       },
     },
     {
-      files: ["*.css"],
+      files: ["**/*.css"],
       options: {
         parser: "css",
-        goTemplateBracketSpacing: true,
       },
     },
     {
-      files: ["*.xml"],
+      files: ["**/*.xml"],
       options: {
         parser: "html",
         goTemplateBracketSpacing: true,
