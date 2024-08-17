@@ -5,6 +5,7 @@
 [![Forks](https://img.shields.io/github/forks/Armoghan-Blogs/Blogs?style=social)](https://github.com/Armoghan-Blogs/Blogs)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b12bab5e-1b8d-4eb2-bba5-04732f978726/deploy-status)](https://app.netlify.com/sites/armoghan-blogs/deploys)
 [![Comment on Pull Requests and Issues ✨](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml)
 [![CodeQL Analysis 🛠️🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/codeql.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/codeql.yml)
 [![Dependabot Updates](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates)
