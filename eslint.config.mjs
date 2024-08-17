@@ -25,6 +25,7 @@ export default [
       "**/.prettierrc.js",
       "**/.eslintignore",
       "**/commitlint.config.js",
+      "**//layouts/_default/index.json"
     ],
   },
   {languageOptions: { globals: globals.browser }},
