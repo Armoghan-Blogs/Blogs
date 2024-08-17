@@ -81,11 +81,5 @@ export default [
 {
   files: ["**/*.json"],
   ...json.configs["recommended"],
-  rules: {
-    "json/no-unused-keys": "error",
-    "json/require-quotes": ["error", "double"],
-    "json/*": ["error", {"allowComments": true}],
-    "json/no-single-quotes": "error"
-  },
 }
 ];
