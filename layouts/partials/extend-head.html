@@ -1,0 +1,16 @@
+{{- $sw := resources.Get "serviceWorker.js" }}
+{{- $swJS := $sw | js.Build }}
+{{- if eq hugo.Environment "production" }}
+  {{- $swJS = $sw | js.Build (dict "minify" true) | fingerprint }}
+{{- end }}
+
+<script>// Check if the browser supports Service Workersif ('serviceWorker'in navigator) {
+    // Register the Service Worker
+    navigator.serviceWorker.register('{{ $swJS.RelPermalink }}', { scope: '/' })
+      .then(function(registration) {
+         registration.scope;
+      })
+      .catch(function(error) {
+         console.error('ServiceWorker registration failed: ', error);
+      });
+</script>
