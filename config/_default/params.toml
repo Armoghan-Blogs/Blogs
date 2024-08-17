@@ -9,7 +9,7 @@ autoSwitchAppearance = true
 colorScheme = "blowfish"
 defaultAppearance = "light" # valid options: light or dark
 
-enableCodeCopy = false
+enableCodeCopy = true
 enableSearch = true
 
 mainSections = ["posts", "categories", "tutorials"]
@@ -18,7 +18,7 @@ mainSections = ["posts", "categories", "tutorials"]
 disableImageOptimization = false
 disableTextInHeader = false
 
-# defaultBackgroundImage = "img/background.jpeg" # used as default for background images
+defaultBackgroundImage = "img/background.jpeg" # used as default for background images
 # defaultFeaturedImage = "img/background.jpeg"   # used as default for featured images in all articles
 
 highlightCurrentMenuArea = true
@@ -36,10 +36,10 @@ showScrollToTop = true
 showThemeAttribution = true
 
 [homepage]
-layout = "background" # valid options: page, profile, hero, card, background, custom
-#homepageImage = "IMAGE.jpg" # used in: hero, and card
 cardView = true
 cardViewScreenWidth = false
+# homepageImage = "" # used in: hero, and card
+layout = "background"       # valid options: page, profile, hero, card, background, custom
 layoutBackgroundBlur = true # only used when layout equals background
 showMoreLink = true
 showMoreLinkDest = "/posts"
@@ -47,13 +47,6 @@ showRecent = true
 showRecentItems = 6
 
 [article]
-showAuthor = true
-showDate = true
-showDateOnlyInArticle = false
-showDateUpdated = false
-showLikes = true
-showViews = false
-# showAuthorBottom = false
 editAppendPath = true
 editURL = "https://github.com/Armoghan-Blogs/Blogs/"
 heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
@@ -73,17 +66,24 @@ sharingLinks = [
   "whatsapp",
   "telegram",
 ]
+showAuthor = true
+showAuthorBottom = true
 showAuthorsBadges = false
 showBreadcrumbs = true
+showDate = true
+showDateOnlyInArticle = false
+showDateUpdated = false
 showDraftLabel = true
 showEdit = true
 showHeadingAnchors = false
 showHero = true
+showLikes = true
 showPagination = true
 showReadingTime = true
 showRelatedContent = true
 showTableOfContents = false
 showTaxonomies = false
+showViews = true
 showWordCount = true
 showZenMode = false
 
@@ -99,17 +99,17 @@ orderByWeight = false
 showBreadcrumbs = true
 showCards = true
 showHero = true
-showLikes = false
+showLikes = true
 showSummary = true
 showTableOfContents = true
-showViews = false
+showViews = true
 
 [sitemap]
 excludedKinds = ["taxonomy", "term"]
 
 [taxonomy]
 cardView = true
-heroStyle = "thumbAndBackground" # valid options: basic, big, background, thumbAndBackground
+heroStyle = "background"   # valid options: basic, big, background, thumbAndBackground
 showBreadcrumbs = true
 showHero = true
 showLikes = true
