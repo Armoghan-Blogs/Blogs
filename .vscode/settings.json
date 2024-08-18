@@ -14,7 +14,7 @@
     "files.autoSaveDelay": 1000, // Delay before auto-saving files
     // Use Prettier for code formatting
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true, // Automatically format on save
+    "editor.formatOnSave": false, // Automatically format on save
     // Display line numbers and whitespace characters
     "editor.lineNumbers": "on",
     "editor.renderWhitespace": "all",
