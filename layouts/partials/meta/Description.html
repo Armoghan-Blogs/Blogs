@@ -1,4 +1,4 @@
-{{- with .Params.Description | default .Params.Summary | default .Site.Params.description }}
+{{- with  .Params.Description | default .Params.Summary | default .Site.Params.description }}
   <!-- Meta tag for page description -->
   <meta name="description" content="{{ . }}" />
   <!-- Meta tag for structured data description -->

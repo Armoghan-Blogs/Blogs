@@ -1,23 +1,29 @@
 <!-- Twitter meta tag for specifying the Twitter username of the site -->
-<meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
+{{ with .Site.Params.twitter }}
+  <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
+{{ end }}
+
 
 <!-- Twitter meta tag for specifying the Twitter username of the content creator -->
-<meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+{{ with .Site.Params.twitter }}
+  <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+{{ end }}
+
 
 <!-- Twitter meta tag for specifying the title of the content for Twitter cards -->
 <meta name="twitter:title" content="{{ .Title }}" />
 
 <!-- Twitter meta tag for specifying the description of the content for Twitter cards -->
-<meta
-  name="twitter:description"
-  content="{{ .Params.Summary | default .Params.Description }}"
-/>
+{{ with .Params.Description | default .Params.Summary | default .Site.Params.descriptio }}
+  <meta name="twitter:description" content="{{ . }}" />
+{{ end }}
+
 
 <!-- Twitter meta tag for specifying the image associated with the content for Twitter cards -->
-<meta
-  name="twitter:image"
-  content="{{ with .Params.image }}{{ .Permalink }}{{ end }}"
-/>
+{{ with .Params.image }}
+  <meta name="twitter:image" content="{{ .Params.image }}" />
+{{ end }}
+
 
 <!-- Dublin Core meta tags for providing metadata about the content -->
 
@@ -28,10 +34,16 @@
 <meta name="DC.creator" content="{{ .Site.Author.name }}" />
 
 <!-- DC.subject: The keywords associated with the content, joined by commas -->
-<meta name="DC.subject" content="{{ .Params.keywords }}" />
+{{ with .Params.keywords }}
+  <meta name="DC.subject" content="{{ .Params.keywords }}" />
+{{ end }}
+
 
 <!-- DC.description: The description or summary of the content -->
-<meta name="DC.description" content="{{ .Summary | default .Description }}" />
+<meta
+  name="DC.description"
+  content="{{ .Params.Description | default .Params.Summary | default .Site.Params.description }}"
+/>
 
 <!-- DC.publisher: The name of the publisher, typically the site title -->
 <meta name="DC.publisher" content="{{ .Site.Title }}" />
@@ -43,17 +55,14 @@
 <meta name="DC.language" content="{{ .Site.LanguageCode }}" />
 
 <!-- Author meta tag for specifying the author of the site -->
-{{ with .Site.Author.name }}
-  <meta name="author" content="{{ . }}" />
-{{ end }}
-
+<meta name="author" content="{{ .Site.Author.name }}" />
 
 <!-- Links meta tags for specifying the author's social media profiles -->
 {{ with .Site.Author.links }}
   {{ range $links := . }}
     {{ range $name, $url := $links }}
       <!-- Link to the author's social media profile -->
-      <link href="{{ $url }}" rel="me" />
+      <link href="{{ $url }}" rel="{{ $name }}" />
     {{ end }}
   {{ end }}
 {{ end }}
