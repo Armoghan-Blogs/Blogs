@@ -5,9 +5,8 @@
 [![Forks](https://img.shields.io/github/forks/Armoghan-Blogs/Blogs?style=social)](https://github.com/Armoghan-Blogs/Blogs)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![GitHub](https://img.shields.io/github/last-commit/Armoghan-Blogs/Blogs/main?style=flat-square)](https://github.com/Armoghan-Blogs/Blogs/commits/main)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b12bab5e-1b8d-4eb2-bba5-04732f978726/deploy-status)](https://app.netlify.com/sites/armoghan-blogs/deploys)
-[![Comment on Pull Requests and Issues ✨](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/greetings.yml)
-[![CodeQL Analysis 🛠️🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/codeql.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/codeql.yml)
 [![Dependabot Updates](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates)
 [![Dependency Review 🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml)
 [![Hugo Version](https://img.shields.io/static/v1?label=HUGO-version&message=0.131.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.131.0)
@@ -20,6 +19,7 @@
 - [Table of Contents 📚](#table-of-contents-)
 - [About 🤔](#about-)
 - [Overview 🌟](#overview-)
+- [Lighthouse Score](#lighthouse-score)
 - [Features ✨](#features-)
 - [Technologies Used 🛠️](#technologies-used-️)
 - [Special Thanks 🙏](#special-thanks-)
@@ -41,6 +41,10 @@ generator, and hosted on Netlify.
 - **[Decap CMS](https://www.decapcms.org/)**: A user-friendly content management
   system that makes it easy to create and manage blog posts without complex
   configurations.
+
+## Lighthouse Score
+
+[PageSpeed Insights report](https://pagespeed.web.dev/analysis/https-armoghan-blogs-netlify-app/wj7kgkl552?form_factor=desktop)
 
 ## Features ✨
 
