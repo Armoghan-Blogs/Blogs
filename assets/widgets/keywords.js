@@ -1,0 +1,320 @@
+// Register the custom editor component for `keyword`
+CMS.registerEditorComponent({
+  id: 'keyword',
+  label: 'Keyword',
+  fields: [
+    {
+      name: 'icon',
+      label: 'Icon',
+      widget: 'select',
+      options: [
+        'amazon',
+        'apple',
+        'bars',
+        'bell',
+        'blogger',
+        'bluesky',
+        'bomb',
+        'bug',
+        'check',
+        'chevron-down',
+        'circle-info',
+        'codeberg',
+        'codepen',
+        'code',
+        'comment',
+        'dev',
+        'discord',
+        'discourse',
+        'docker',
+        'download',
+        'dribbble',
+        'edit',
+        'email',
+        'envelope',
+        'expand',
+        'eye',
+        'facebook',
+        'fire',
+        'flickr',
+        'fork',
+        'foursquare',
+        'ghost',
+        'github',
+        'gitlab',
+        'globe',
+        'goodreads',
+        'google',
+        'graduation-cap',
+        'hackernews',
+        'hashnode',
+        'heart-empty',
+        'heart',
+        'image',
+        'instagram',
+        'itch-io',
+        'keybase',
+        'kickstarter',
+        'ko-fi',
+        'language',
+        'lastfm',
+        'lightbulb',
+        'linkedin',
+        'link',
+        'list',
+        'location-dot',
+        'lock',
+        'mastodon',
+        'medium',
+        'microsoft',
+        'moon',
+        'mug-hot',
+        'music',
+        'orcid',
+        'patreon',
+        'paypal',
+        'pencil',
+        'pgpkey',
+        'phone',
+        'pinterest',
+        'poo',
+        'reddit',
+        'researchgate',
+        'rss-square',
+        'rss',
+        'scale-balanced',
+        'search',
+        'shield',
+        'skull-crossbones',
+        'slack',
+        'snapchat',
+        'soundcloud',
+        'spotify',
+        'stack-overflow',
+        'star',
+        'steam',
+        'stripe',
+        'substack',
+        'sun',
+        'tag',
+        'telegram',
+        'text.txt',
+        'threads',
+        'tiktok',
+        'triangle-exclamation',
+        'tumblr',
+        'twitch',
+        'twitter',
+        'wand-magic-sparkles',
+        'whatsapp',
+        'xing',
+        'xmark',
+        'x-twitter',
+        'youtube',
+      ],
+      required: true,
+      hint: 'Select an icon to represent the keyword.',
+    },
+    {
+      name: 'content',
+      label: 'Content',
+      widget: 'text',
+      required: true,
+      hint: 'Enter the content for the keyword.',
+    },
+  ],
+  pattern: /^{{< keyword icon="([^"]+)" >}}(.*?){{< \/keyword >}}$/,
+  fromBlock: function (match) {
+    return {
+      icon: match[1],
+      content: match[2],
+    };
+  },
+  toBlock: function (data) {
+    return `{{< keyword icon="${data.icon}" >}}${data.content}{{< /keyword >}}`;
+  },
+  toPreview: function (data) {
+    return `
+      <div class="keyword">
+        <span class="icon">${data.icon}</span>
+        <span class="content">${data.content}</span>
+      </div>
+    `;
+  },
+});
+
+// Register the custom editor component for `keywordList`
+CMS.registerEditorComponent({
+  id: 'keywordList',
+  label: 'Keyword List',
+  fields: [
+    {
+      name: 'keywords',
+      label: 'Keywords',
+      widget: 'list',
+      fields: [
+        {
+          name: 'icon',
+          label: 'Icon',
+          widget: 'select',
+          options: [
+            'amazon',
+            'apple',
+            'bars',
+            'bell',
+            'blogger',
+            'bluesky',
+            'bomb',
+            'bug',
+            'check',
+            'chevron-down',
+            'circle-info',
+            'codeberg',
+            'codepen',
+            'code',
+            'comment',
+            'dev',
+            'discord',
+            'discourse',
+            'docker',
+            'download',
+            'dribbble',
+            'edit',
+            'email',
+            'envelope',
+            'expand',
+            'eye',
+            'facebook',
+            'fire',
+            'flickr',
+            'fork',
+            'foursquare',
+            'ghost',
+            'github',
+            'gitlab',
+            'globe',
+            'goodreads',
+            'google',
+            'graduation-cap',
+            'hackernews',
+            'hashnode',
+            'heart-empty',
+            'heart',
+            'image',
+            'instagram',
+            'itch-io',
+            'keybase',
+            'kickstarter',
+            'ko-fi',
+            'language',
+            'lastfm',
+            'lightbulb',
+            'linkedin',
+            'link',
+            'list',
+            'location-dot',
+            'lock',
+            'mastodon',
+            'medium',
+            'microsoft',
+            'moon',
+            'mug-hot',
+            'music',
+            'orcid',
+            'patreon',
+            'paypal',
+            'pencil',
+            'pgpkey',
+            'phone',
+            'pinterest',
+            'poo',
+            'reddit',
+            'researchgate',
+            'rss-square',
+            'rss',
+            'scale-balanced',
+            'search',
+            'shield',
+            'skull-crossbones',
+            'slack',
+            'snapchat',
+            'soundcloud',
+            'spotify',
+            'stack-overflow',
+            'star',
+            'steam',
+            'stripe',
+            'substack',
+            'sun',
+            'tag',
+            'telegram',
+            'text.txt',
+            'threads',
+            'tiktok',
+            'triangle-exclamation',
+            'tumblr',
+            'twitch',
+            'twitter',
+            'wand-magic-sparkles',
+            'whatsapp',
+            'xing',
+            'xmark',
+            'x-twitter',
+            'youtube',
+          ],
+          required: true,
+          hint: 'Select an icon to represent the keyword.',
+        },
+        {
+          name: 'content',
+          label: 'Content',
+          widget: 'text',
+          required: true,
+          hint: 'Enter the content for the keyword.',
+        },
+      ],
+      hint: 'Add a list of keywords.',
+    },
+  ],
+  pattern: /^{{< keywordList >}}([\s\S]*?){{< \/keywordList >}}$/,
+  fromBlock: function (match) {
+    const content = match[1].trim();
+    const keywords = content
+      .split(/{{< keyword[^>]+>}}|{{< \/keyword >}}/)
+      .filter(Boolean);
+
+    return {
+      keywords: keywords.map((keyword) => {
+        const parts = keyword.split(/<\/?keyword[^>]*>/).filter(Boolean);
+        return {
+          icon: parts[0].trim(),
+          content: parts[1].trim(),
+        };
+      }),
+    };
+  },
+  toBlock: function (data) {
+    const keywords = data.keywords
+      .map((keyword) => {
+        return `{{< keyword icon="${keyword.icon}" >}}${keyword.content}{{< /keyword >}}`;
+      })
+      .join('\n');
+    return `{{< keywordList >}}\n${keywords}\n{{< /keywordList >}}`;
+  },
+  toPreview: function (data) {
+    return `
+      <div class="keyword-list">
+        ${data.keywords
+          .map(
+            (keyword) => `
+          <div class="keyword">
+            <span class="icon">${keyword.icon}</span>
+            <span class="content">${keyword.content}</span>
+          </div>
+        `
+          )
+          .join('')}
+      </div>
+    `;
+  },
+});

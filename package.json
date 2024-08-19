@@ -4,6 +4,8 @@
   "description": "Personal blog built with Hugo and Decap-CMS using the Blowfish theme.",
   "private": "true",
   "scripts": {
+    "postinstall": "vendor-copy",
+    "assets": "rimraf assets/decap && vendor-copy",
     "start": "concurrently \"npm run dev\" \"npm run decap-dev\"",
     "decap-dev": "npx decap-server",
     "dev": "hugo server --buildDrafts --buildFuture --buildExpired --gc --logLevel info --watch",
@@ -100,27 +102,43 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-      }
-    },
+    }
+  },
   "devDependencies": {
-    "husky": "9.1.4",
-    "lint-staged": "15.2.9",
-    "commitlint": "19.4.0",
-    "commitizen": "4.3.0",
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
+    "@eslint/js": "^9.9.0",
+    "commitizen": "4.3.0",
+    "commitlint": "19.4.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^9.9.0",
-    "@eslint/js": "^9.9.0",
     "eslint-plugin-css-modules": "^2.12.0",
     "eslint-plugin-html": "^8.1.1",
     "eslint-plugin-json": "^4.0.1",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
+    "husky": "9.1.4",
+    "lint-staged": "15.2.9",
     "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-toml": "^2.0.1",
-    "prettier-plugin-xml": "^0.1.0"
-  }
+    "prettier-plugin-xml": "^0.1.0",
+    "rimraf": "^6.0.1",
+    "vendor-copy": "^3.0.1"
+  },
+  "dependencies": {
+    "decap-cms": "^3.3.2",
+    "netlify-identity-widget": "^1.9.2"
+  },
+  "vendorCopy": [
+    {
+      "from": "node_modules/decap-cms/dist/decap-cms.js",
+      "to": "assets/decap/decap-cms.js"
+    },
+    {
+      "from": "node_modules/netlify-identity-widget/build/netlify-identity-widget.js",
+      "to": "assets/decap/netlify-identity-widget.js"
+    }
+  ]
 }

@@ -163,3 +163,16 @@ showViews = true
 # bing = ""
 # pinterest = ""
 # yandex = ""
+
+# Decap CMS Config
+[DecapCMS]
+development = false
+branch = "main"
+media = "/static/media"
+public = "/media"
+PublishMode = "editorial_workflow"
+# logo = ""
+preview = true
+search = false
+Cheatsheets = true
+Tutorials = true
