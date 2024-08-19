@@ -7,3 +7,4 @@ import '../widgets/codeImporter';
 import '../widgets/codeberg';
 import '../widgets/figure';
 import '../widgets/gallery';
+import '../widgets/github';
