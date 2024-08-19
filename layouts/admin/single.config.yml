@@ -180,7 +180,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: ""
+          hint: "{{ partial "decap/tags-options.html" . }}"
         }
       - { 
           label: "Categories", 
@@ -188,7 +188,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/categories-options.html" . }}" 
         }
       - { 
           label: "Keywords", 
@@ -196,7 +196,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/keywords-options.html" . }}" 
         }
       - { 
           label: "Series", 
@@ -204,7 +204,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/series-options.html" . }}" 
         }
       - { 
           label: "Series Order", 
@@ -218,7 +218,7 @@ collections:
           name: "author", 
           widget: "select", 
           required: true , 
-          options: [], 
+          options: [{{ partial "decap/authors-options.html" . }}], 
           default: "{{ .Site.Author.name }}" 
         }
       - { 
@@ -355,7 +355,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: ""
+          hint: "{{ partial "decap/tags-options.html" . }}"
         }
       - { 
           label: "Categories", 
@@ -363,7 +363,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/categories-options.html" . }}" 
         }
       - { 
           label: "Keywords", 
@@ -371,7 +371,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/keywords-options.html" . }}" 
         }
       - { 
           label: "Series", 
@@ -379,7 +379,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/series-options.html" . }}" 
         }
       - { 
           label: "Series Order", 
@@ -393,7 +393,7 @@ collections:
           name: "author", 
           widget: "select", 
           required: true , 
-          options: [], 
+          options: [{{ partial "decap/authors-options.html" . }}], 
           default: "{{ .Site.Author.name }}" 
         }
       - { 
@@ -531,7 +531,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: ""
+          hint: "{{ partial "decap/tags-options.html" . }}"
         }
       - { 
           label: "Categories", 
@@ -539,7 +539,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/categories-options.html" . }}" 
         }
       - { 
           label: "Keywords", 
@@ -547,7 +547,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/keywords-options.html" . }}" 
         }
       - { 
           label: "Series", 
@@ -555,7 +555,7 @@ collections:
           widget: "list", 
           multiple: true, 
           allow_add: true, 
-          hint: "" 
+          hint: "{{ partial "decap/series-options.html" . }}" 
         }
       - { 
           label: "Series Order", 
@@ -569,7 +569,7 @@ collections:
           name: "author", 
           widget: "select", 
           required: true , 
-          options: [], 
+          options: [{{ partial "decap/authors-options.html" . }}], 
           default: "{{ .Site.Author.name }}" 
         }
       - { 
@@ -1957,7 +1957,7 @@ collections:
               label: "Main Sections",
               name: "mainSections",
               widget: "select",
-              options: [],
+              options: [{{ partial "decap/sections-options.html" . }}],
               required: false,
               multiple: true,
               hint: "Select the main sections of your site. You can choose multiple sections to be featured or displayed.",
