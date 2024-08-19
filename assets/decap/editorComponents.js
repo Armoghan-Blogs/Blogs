@@ -13,3 +13,5 @@ import '../widgets/icon';
 import '../widgets/katex';
 import '../widgets/lead';
 import '../widgets/list';
+import '../widgets/rtl';
+import '../widgets/mdimport';
