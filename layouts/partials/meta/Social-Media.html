@@ -21,7 +21,7 @@
 
 <!-- Twitter meta tag for specifying the image associated with the content for Twitter cards -->
 {{ with .Params.image }}
-  <meta name="twitter:image" content="{{ .Params.image }}" />
+  <meta name="twitter:image" content="{{ . }}" />
 {{ end }}
 
 
@@ -35,7 +35,7 @@
 
 <!-- DC.subject: The keywords associated with the content, joined by commas -->
 {{ with .Params.keywords }}
-  <meta name="DC.subject" content="{{ .Params.keywords }}" />
+  <meta name="DC.subject" content="{{ delimit . ", " }}" />
 {{ end }}
 
 
