@@ -78,5 +78,27 @@
         {{- end }}
       {{- end }}
     {{- end }}
+
+
+    <!-- Include additional CMS script -->
+    {{- with resources.Get "decap/editorComponents.js" }}
+      <!-- If in development environment, include the non-minified version -->
+      {{- if eq hugo.Environment "development" }}
+        {{- with . | js.Build }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{- end }}
+        <!-- If in production environment, include the minified version with integrity check -->
+      {{- else }}
+        {{- $opts := dict "minify" true }}
+        {{- with . | js.Build $opts | fingerprint }}
+          <script
+            type="module"
+            src="{{ .RelPermalink }}"
+            integrity="{{- .Data.Integrity }}"
+            crossorigin="anonymous"
+          ></script>
+        {{- end }}
+      {{- end }}
+    {{- end }}
   </body>
 </html>
