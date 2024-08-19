@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Specify the character encoding for the document -->
+    <meta charset="UTF-8" />
+    <!-- Ensure proper scaling and responsiveness on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Prevent search engines and web crawlers from indexing or following links on this page -->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Instruct Googlebot to not archive this page -->
+    <meta name="googlebot" content="noarchive" />
+    <!-- Set the title of the page, dynamically generated with Hugo variables -->
+    <title>{{ .Site.Title }} | {{ .Title }}</title>
+    <!-- Include Netlify Identity Widget -->
+    {{- with resources.Get "decap/netlify-identity-widget.js" }}
+      <!-- If in development environment, include the non-minified version -->
+      {{- if eq hugo.Environment "development" }}
+        {{- with . | js.Build }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{- end }}
+        <!-- If in production environment, include the minified version with integrity check -->
+      {{- else }}
+        {{- $opts := dict "minify" true }}
+        {{- with . | js.Build $opts |
+          fingerprint
+        }}
+          <script
+            src="{{ .RelPermalink }}"
+            integrity="{{- .Data.Integrity }}"
+            crossorigin="anonymous"
+          ></script>
+        {{- end }}
+
+      {{- end }}
+
+    {{- end }}
+
+
+    <!-- Include Custom CSS -->
+    {{ with resources.Get "styles/decap.css" }}
+      <!-- Check if the style.scss resource exists -->
+      {{- if eq hugo.Environment "development" }}
+        <!-- In development environment, use the plain CSS without minification or fingerprinting -->
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{- else }}
+        <!-- In production environment -->
+        {{ with . | minify | fingerprint }}
+          <!-- Minify the CSS, generate fingerprint, and include the link tag with integrity attribute -->
+          <link
+            rel="stylesheet"
+            href="{{ .RelPermalink }}"
+            integrity="{{ .Data.Integrity }}"
+            crossorigin="anonymous"
+          />
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  </head>
+  <body>
+    <!-- Include Decap CMS script -->
+    {{- with resources.Get "decap/decap-cms.js" }}
+      <!-- If in development environment, include the non-minified version -->
+      {{- if eq hugo.Environment "development" }}
+        {{- with . | js.Build }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{- end }}
+        <!-- If in production environment, include the minified version with integrity check -->
+      {{- else }}
+        {{- $opts := dict "minify" true }}
+        {{- with . | js.Build $opts |
+          fingerprint
+        }}
+          <script
+            src="{{ .RelPermalink }}"
+            integrity="{{- .Data.Integrity }}"
+            crossorigin="anonymous"
+          ></script>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  </body>
+</html>
