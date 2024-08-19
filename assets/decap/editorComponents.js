@@ -5,4 +5,5 @@ import '../widgets/carousel';
 import '../widgets/chart';
 import '../widgets/codeImporter';
 import '../widgets/codeberg';
+import '../widgets/figure';
 
