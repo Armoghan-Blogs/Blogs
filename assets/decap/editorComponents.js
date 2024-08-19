@@ -6,4 +6,4 @@ import '../widgets/chart';
 import '../widgets/codeImporter';
 import '../widgets/codeberg';
 import '../widgets/figure';
-
+import '../widgets/gallery';
