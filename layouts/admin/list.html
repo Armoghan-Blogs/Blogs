@@ -9,8 +9,6 @@
     <meta name="robots" content="noindex, nofollow" />
     <!-- Instruct Googlebot to not archive this page -->
     <meta name="googlebot" content="noarchive" />
-    <!-- Set the title of the page, dynamically generated with Hugo variables -->
-    <title>{{ .Site.Title }} | {{ .Title }}</title>
     <!-- Include Netlify Identity Widget -->
     {{- with resources.Get "decap/netlify-identity-widget.js" }}
       <!-- If in development environment, include the non-minified version -->
@@ -55,6 +53,8 @@
         {{- end }}
       {{- end }}
     {{- end }}
+    <!-- Set the title of the page, dynamically generated with Hugo variables -->
+    <title>{{ .Site.Title }} | {{ .Title }}</title>
   </head>
   <body>
     <!-- Include Decap CMS script -->
