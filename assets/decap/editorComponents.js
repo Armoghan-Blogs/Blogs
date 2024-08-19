@@ -10,3 +10,4 @@ import '../widgets/gallery';
 import '../widgets/github';
 import '../widgets/gitlab';
 import '../widgets/icon';
+import '../widgets/katex';
