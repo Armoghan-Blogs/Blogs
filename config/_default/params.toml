@@ -129,13 +129,13 @@ showTableOfContents = true
 showViews = true
 
 [firebase]
-# apiKey = "XXXXXX"
-# authDomain = "XXXXXX"
-# projectId = "XXXXXX"
-# storageBucket = "XXXXXX"
-# messagingSenderId = "XXXXXX"
-# appId = "XXXXXX"
-# measurementId = "XXXXXX"
+apiKey = "AIzaSyDuJI7aN8UqyibbCUn4LDIwnbJzgdtjy-g"
+authDomain = "armoghan-blogs-aa5b6.firebaseapp.com"
+projectId = "armoghan-blogs-aa5b6"
+storageBucket = "armoghan-blogs-aa5b6.appspot.com"
+messagingSenderId = "638030517122"
+appId = "1:638030517122:web:352a7d26fdca848d4e359b"
+measurementId = "G-T7WW2L6RBX"
 
 [fathomAnalytics]
 # site = "ABC12345"
