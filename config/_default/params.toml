@@ -130,22 +130,22 @@ showViews = true
 
 [firebase]
 apiKey = "AIzaSyDuJI7aN8UqyibbCUn4LDIwnbJzgdtjy-g"
+appId = "1:638030517122:web:352a7d26fdca848d4e359b"
 authDomain = "armoghan-blogs-aa5b6.firebaseapp.com"
+measurementId = "G-T7WW2L6RBX"
+messagingSenderId = "638030517122"
 projectId = "armoghan-blogs-aa5b6"
 storageBucket = "armoghan-blogs-aa5b6.appspot.com"
-messagingSenderId = "638030517122"
-appId = "1:638030517122:web:352a7d26fdca848d4e359b"
-measurementId = "G-T7WW2L6RBX"
 
 [fathomAnalytics]
 # site = "ABC12345"
 # domain = "llama.yoursite.com"
 
 [umamiAnalytics]
-# websiteid = "ABC12345"
-# domain = "llama.yoursite.com"
-# dataDomains = "yoursite.com,yoursite2.com"
-# enableTrackEvent = true
+websiteid = "1c86f70e-aaf9-4e8a-b687-255717362ca5"
+domain = "cloud.umami.is"
+dataDomains = "https://armoghan-blogs.netlify.app/"
+enableTrackEvent = true
 
 [selineAnalytics]
 # token = "XXXXXX"
@@ -159,20 +159,20 @@ measurementId = "G-T7WW2L6RBX"
 # globalWidgetPosition = "Right"
 
 [verification]
-google = "x4mfCN8tLPQvaLugBp5JuK6IDtnyt6U7iVgB7nEZv3M"
 bing = "F5E6FE13E3FE3C1DE25A0E210CE9A9C7"
+google = "x4mfCN8tLPQvaLugBp5JuK6IDtnyt6U7iVgB7nEZv3M"
 # pinterest = ""
 # yandex = ""
 
 # Decap CMS Config
 [DecapCMS]
-development = false
+PublishMode = "editorial_workflow"
 branch = "main"
+development = false
 media = "/static/media"
 public = "/media"
-PublishMode = "editorial_workflow"
 # logo = ""
-preview = true
-search = false
 Cheatsheets = true
 Tutorials = true
+preview = true
+search = false
