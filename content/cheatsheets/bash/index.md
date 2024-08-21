@@ -1,7 +1,7 @@
 ---
 title: Bash/Shell Scripting Cheatsheet
 date: 2023-12-21T14:00:00.000Z
-image: featured.png
+image: featured.jpg
 description: A comprehensive Bash cheatsheet covering essential commands,
   scripting techniques, and best practices for Bash shell scripting.
 slug: bash-cheatsheet
