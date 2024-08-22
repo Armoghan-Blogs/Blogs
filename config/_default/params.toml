@@ -143,8 +143,8 @@ storageBucket = "armoghan-blogs-aa5b6.appspot.com"
 
 [umamiAnalytics]
 websiteid = "1c86f70e-aaf9-4e8a-b687-255717362ca5"
-domain = "cloud.umami.is"
-dataDomains = "https://armoghan-blogs.netlify.app/"
+#domain = "cloud.umami.is"
+#dataDomains = "https://armoghan-blogs.netlify.app/"
 enableTrackEvent = true
 
 [selineAnalytics]
