@@ -1,0 +1,108 @@
+// **************************************
+// * VS Code Settings Configuration     *
+// * Project: Armoghan Blogs            *
+// * Description: Configuration for     *
+// * optimizing the development         *
+// * environment for Hugo websites.     *
+// **************************************
+{
+    // **************************************
+    // * General Editor Settings            *
+    // **************************************
+    
+    // Auto-save when the window loses focus
+    "files.autoSave": "onWindowChange",
+    "files.autoSaveDelay": 1000, 
+    
+    // Display line numbers and whitespace characters
+    "editor.lineNumbers": "on",
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on", // Wrap lines at viewport width
+    
+    // Cursor and tab settings
+    "editor.cursorBlinking": "smooth",
+    "editor.tabSize": 4,
+    "editor.tabCompletion": "on",
+    
+    // Suggestion settings
+    "editor.suggest.insertMode": "replace",
+    "editor.suggest.showSnippets": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestOnTriggerCharacters": true,
+    
+    // Code lens and hover settings
+    "editor.codeLens": true,
+    "editor.hover.enabled": true,
+    
+    // **************************************
+    // * Appearance Settings               *
+    // **************************************
+    
+    // Disable minimap and set color theme
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Shades of Purple",
+    
+    // Enable bracket pair colorization
+    "editor.bracketPairColorization.enabled": true,
+    
+    // **************************************
+    // * Additional Settings               *
+    // **************************************
+    
+    // Line endings configuration for WSL
+    "files.eol": "\n",
+    
+    // File encoding configuration
+    "files.encoding": "utf8",
+    
+    // Enable bracket auto-closing and quick suggestions
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingTags": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    
+    // Disable auto-formatting on paste
+    "editor.formatOnPaste": false,
+    
+    // Disable auto-formatting on type
+    "editor.formatOnType": false,
+    
+    // Disable auto-formatting on save
+    "editor.formatOnSave": false,
+    
+    // Enable word wrap on typing
+    "editor.wordWrapColumn": 80,
+    
+    // Enable font ligatures
+    "editor.fontLigatures": true,
+    
+    // Enable cursor suggestions
+    "editor.cursorSuggestions": true,
+    
+    // **************************************
+    // * File Exclusion and Search Settings *
+    // **************************************
+    
+    // Exclude specific files and folders from the workspace
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.vscode": true,
+        "**/package-lock.json": true,
+        "**/.hugo_build.lock": true,
+        "**/.gitignore": true,
+        "**/LICENSE": true,
+        "**/SECURITY.md": true,
+        "**/CONTRIBUTING.md": true,
+        "**/CODE_OF_CONDUCT.md": true
+    },
+    
+    // Exclude specific files and folders from search results
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+    },
+}
