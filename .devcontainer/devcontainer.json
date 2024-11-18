@@ -10,68 +10,69 @@
 {
 	// Name of the development container
 	"name": "Armoghan Blogs",
-	// Base image for the development container
-	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
-	// Features to add to the dev container
-	"features": {
-		// Hugo Feature for static site generation
-		"ghcr.io/devcontainers/features/hugo:1": {
-			"extended": true,
-			"version": "latest"
-		},
-		// Go Feature for Go language support
-		"ghcr.io/devcontainers/features/go:1": {
-			"version": "latest"
-		},
-		// Node.js Feature for JavaScript and npm support
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "latest"
-		}
+
+	// Use the custom Dockerfile
+	"build": {
+		"dockerfile": "Dockerfile"
 	},
+
 	// Custom VS Code extensions
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				
 				// Icon themes for a personalized UI
 				"tal7aouy.icons",
+				
 				// Themes for visual customization
 				"ahmadawais.shades-of-purple",
+				
 				// Linting and formatting extensions
-				"dbaeumer.vscode-eslint", // ESLint for JavaScript
-				"esbenp.prettier-vscode", // Prettier code formatter
-				"davidanson.vscode-markdownlint", // Markdown linting
+				"dbaeumer.vscode-eslint", 
+				"esbenp.prettier-vscode",
+				"davidanson.vscode-markdownlint",
+				
 				// Hugo support
-				"budparr.language-hugo-vscode", // Syntax highlighting for Hugo
-				"rusnasonov.vscode-hugo", // Hugo language support
-				"fivethree.vscode-hugo-snippets", // Snippets for Hugo
-				"kaellarkin.hugo-shortcode-syntax", // Syntax highlighting for Hugo shortcodes
+				"budparr.language-hugo-vscode",
+				"rusnasonov.vscode-hugo",
+				"fivethree.vscode-hugo-snippets",
+				"kaellarkin.hugo-shortcode-syntax",
+				
 				// AI-assisted coding
-				"TabNine.tabnine-vscode", // TabNine AI code completion
+				"TabNine.tabnine-vscode", 
+				
 				// UI enhancements
-				"CoenraadS.bracket-pair-colorizer-2", // Bracket pair colorizer for better readability
-				"formulahendry.auto-rename-tag", // Auto rename paired HTML/XML tags
-				"visualstudioexptteam.vscodeintellicode", // IntelliCode for AI-assisted recommendations
-				"naumovs.color-highlight", // Highlights colors in code
+				"CoenraadS.bracket-pair-colorizer-2",
+				"formulahendry.auto-rename-tag",
+				"visualstudioexptteam.vscodeintellicode", 
+				"naumovs.color-highlight", 
+				
 				// Path navigation
-				"christian-kohler.path-intellisense", // Autocomplete for file paths in the project
+				"christian-kohler.path-intellisense", 
+				
 				// Task management
-				"Gruntfuggly.todo-tree", // Track TODO comments across the project
+				"Gruntfuggly.todo-tree", 
+				
 				// Error visualization
-				"usernamehw.errorlens", // Inline display of errors and warnings in the code
+				"usernamehw.errorlens"
 			]
 		}
 	},
+	
 	// Ports to forward from the container to the host
 	"forwardPorts": [
-		1313, // Default port for the Hugo development server
-		8081 // Additional port, typically used for the Decap CMS proxy server
+		1313, 
+		8081 
 	],
+	
 	// User settings for the container
 	"remoteUser": "root",
+
 	// Commands to run after the container is created
 	"postCreateCommand": "npm install && go mod tidy",
+	
 	// Environment variables for the container
-	"environment": {
+	"containerEnv": {
 		"NODE_ENV": "development",
 		"GO_ENV": "development",
 		"HUGO_ENV": "development"
