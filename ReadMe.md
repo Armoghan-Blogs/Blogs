@@ -3,7 +3,9 @@
 
 [![Stars](https://img.shields.io/github/stars/Armoghan-Blogs/Blogs?style=social&label=Stars)](https://github.com/Armoghan-Blogs/Blogs)
 [![Forks](https://img.shields.io/github/forks/Armoghan-Blogs/Blogs?style=social&label=Forks)](https://github.com/Armoghan-Blogs/Blogs)
-[![Minimum Hugo Version](https://img.shields.io/static/v1?label=Minimum%20Hugo%20Version&message=0.87.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.131.0)
+[![Dependabot Updates](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependabot/dependabot-updates)
+[![Dependency Review 🔍](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Armoghan-Blogs/Blogs/actions/workflows/dependency-review.yml)
+[![Hugo Version](https://img.shields.io/static/v1?label=HUGO-version&message=0.131.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.131.0)
 [![Blowfish Theme](https://img.shields.io/badge/Hugo%20Theme-Blowfish-blue)](https://themes.gohugo.io/themes/blowfish/)
 [![GitHub License](https://img.shields.io/github/license/Armoghan-Blogs/Blogs)](https://github.com/Armoghan-Blogs/Blogs/blob/main/LICENSE)
 [![Code Size](https://img.shields.io/github/languages/code-size/Armoghan-Blogs/Blogs)](https://github.com/Armoghan-Blogs/Blogs)
