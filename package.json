@@ -4,7 +4,8 @@
   "description": "Personal blog built with Hugo and Decap-CMS using the Blowfish theme.",
   "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write --ignore-unknown ."
   },
   "keywords": [
     "Hugo",
@@ -29,6 +30,10 @@
     "npm": ">=10.8.0",
     "go": ">=1.22.9",
     "hugo": ">=0.125.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-go-template": "^0.0.15"
   },
   "author": "Armoghan-ul-Mohmin",
   "license": "MIT",
