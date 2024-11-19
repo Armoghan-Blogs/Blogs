@@ -4,6 +4,11 @@
   "description": "Personal blog built with Hugo and Decap-CMS using the Blowfish theme.",
   "private": "true",
   "scripts": {
+    "start": "concurrently \"npm run dev\" \"npm run decap-dev\"",
+    "decap-dev": "npx decap-server",
+    "dev": "hugo server --buildDrafts --buildFuture --buildExpired --gc --logLevel info --watch",
+    "prod": "hugo server --buildDrafts --buildFuture --buildExpired --gc --logLevel info --watch -e production",
+    "build": "hugo --gc --logLevel info --cleanDestinationDir --minify",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown .",
     "lint": "eslint .",
@@ -15,6 +20,7 @@
     "update": "npm update",
     "depcheck": "npx depcheck",
     "cache-clean": "npm cache clean --force",
+    "clean-logs": "rm -f hugo.build.lock && find . -name '*.log' -type f -delete",
     "rebuild-node-modules": "rm -rf node_modules && npm install",
     "prepare": "husky"
   },
