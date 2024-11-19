@@ -9,6 +9,13 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint-staged": "npx lint-staged",
+    "commit": "cz",
+    "audit": "npm audit",
+    "audit:fix": "npm audit --fix",
+    "update": "npm update",
+    "depcheck": "npx depcheck",
+    "cache-clean": "npm cache clean --force",
+    "rebuild-node-modules": "rm -rf node_modules && npm install",
     "prepare": "husky"
   },
   "keywords": [
@@ -62,8 +69,25 @@
       "prettier --write"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && npx git-cz --hook || true",
+      "commit-msg": "npx commitlint --edit $1 "
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.15.0",
+    "commitizen": "^4.3.1",
+    "commitlint": "^19.5.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.15.0",
     "eslint-plugin-css-modules": "^2.12.0",
     "eslint-plugin-html": "^8.1.2",
