@@ -1,0 +1,54 @@
+# Dependency Review Action 🔍
+
+name: "Dependency Review 🔍"
+on:
+  pull_request:
+    branches: ["main"]
+permissions:
+  contents: read 
+  pull-requests: write 
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repository 🚀"
+        uses: actions/checkout@v4
+      - name: "Set up Go"
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.16'
+      - name: "Set up Node.js"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: "Install Hugo"
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y hugo
+      - name: "Cache Node.js Dependencies"
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: "Dependency Review 🛡️"
+        uses: actions/dependency-review-action@v4 
+        with:
+          comment-summary-in-pr: always 
+      - name: "Generate Dependency Review Report"
+        run: |
+          echo "Generating detailed dependency review report..."
+          # Assuming the action generates a report file
+          cat ./dependency-review-report.txt
+      - name: "Upload Dependency Review Report"
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependency-review-report
+          path: ./dependency-review-report.txt
+          retention-days: 7
+      - name: "Post Report Summary"
+        run: |
+          echo "Dependency Review Report Summary:"
+          head -n 10 ./dependency-review-report.txt
+          echo "For full details, please check the uploaded artifact."
