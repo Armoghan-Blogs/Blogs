@@ -9,6 +9,9 @@ RUN apk add --no-cache nodejs npm
 # Install Hugo
 RUN apk add --no-cache hugo
 
+# Install Git
+RUN apk add --no-cache git
+
 # Set up working directory
 WORKDIR /workspaces/Blogs
 
